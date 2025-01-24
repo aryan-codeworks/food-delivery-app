@@ -1,0 +1,467 @@
+{
+    "info": {
+        "_postman_id": "15d3cf27-326f-4115-8cfb-2f46cfd3c78b",
+        "name": "restaurant-app",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "auth",
+            "item": [
+                {
+                    "name": "register",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:5000/api/v1/auth/register",
+                            "path": [
+                                "api",
+                                "v1",
+                                "auth",
+                                "register"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"userName\": \"test\",\n  \"password\": \"abc123\",\n  \"email\": \"test@mail.com\",\n  \"phone\": \"1234567890\",\n  \"address\": [\"123\", \"Mumbai\", \"India\"],\n  \"answer\": \"answer\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "login",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:5000/api/v1/auth/login",
+                            "path": [
+                                "api",
+                                "v1",
+                                "auth",
+                                "login"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"email\": \"test@mail.com\",\n  \"password\": \"abc123\"\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "user",
+            "item": [
+                {
+                    "name": "get-user",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:5000/api/v1/user/getUser",
+                            "path": [
+                                "api",
+                                "v1",
+                                "user",
+                                "getUser"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTBhOTlmZjRjNzEwYzMzZWI5ZmVlZCIsImlhdCI6MTczNzUzMzkyNSwiZXhwIjoxNzM4MTM4NzI1fQ.OZb5tX1arXoxELR3FmJ6LUMfJVc49j94qYXjd2CqFfU"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "update-user",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "http://localhost:5000/api/v1/user/updateUser",
+                            "path": [
+                                "api",
+                                "v1",
+                                "user",
+                                "updateUser"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTBhOTlmZjRjNzEwYzMzZWI5ZmVlZCIsImlhdCI6MTczNzUzMzkyNSwiZXhwIjoxNzM4MTM4NzI1fQ.OZb5tX1arXoxELR3FmJ6LUMfJVc49j94qYXjd2CqFfU"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"userName\": \"updated test\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "update-password",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:5000/api/v1/user/updatePassword",
+                            "path": [
+                                "api",
+                                "v1",
+                                "user",
+                                "updatePassword"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTBhOTlmZjRjNzEwYzMzZWI5ZmVlZCIsImlhdCI6MTczNzUzMzkyNSwiZXhwIjoxNzM4MTM4NzI1fQ.OZb5tX1arXoxELR3FmJ6LUMfJVc49j94qYXjd2CqFfU"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"oldPassword\": \"abc123\",\n  \"newPassword\": \"new123\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "reset-password",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:5000/api/v1/user/resetPassword",
+                            "path": [
+                                "api",
+                                "v1",
+                                "user",
+                                "resetPassword"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTBhOTlmZjRjNzEwYzMzZWI5ZmVlZCIsImlhdCI6MTczNzUzOTg2NCwiZXhwIjoxNzM4MTQ0NjY0fQ.YTj7tIcH9N6nc3HUc9DQEcVY_22cJ6Ji0MkuSQIMac0"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"email\": \"test@mail.com\",\n  \"answer\": \"answer\",\n  \"newPassword\": \"abc123\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "delete-account",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "http://localhost:5000/api/v1/user/deleteUser/6790a99ff4c710c33eb9feed",
+                            "path": [
+                                "api",
+                                "v1",
+                                "user",
+                                "deleteUser",
+                                "6790a99ff4c710c33eb9feed"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTBhOTlmZjRjNzEwYzMzZWI5ZmVlZCIsImlhdCI6MTczNzUzOTk0NSwiZXhwIjoxNzM4MTQ0NzQ1fQ.sHZE21LRy5qtZy7u1FsgkjxsorrWshj7yCM8yRvH9mY"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "restaurant",
+            "item": [
+                {
+                    "name": "create-restaurant",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:5000/api/v1/resturant/create",
+                            "path": [
+                                "api",
+                                "v1",
+                                "resturant",
+                                "create"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTBjNmIzNjUzYzg0MWNlYjY5ZjIxZCIsImlhdCI6MTczNzU0MTMxNiwiZXhwIjoxNzM4MTQ2MTE2fQ.zmU3iTIgCf7PZWWUc9q1LQZMTWjkNGFFCaUZ06wnqxM"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"title\": \"pizza hut\",\n  \"imageUrl\":\n    \"https://www.zilliondesigns.com/blog/wp-content/uploads/Dominos-Pizza-logo-2.jpg\",\n  \"foods\": [\n    {\n      \"dishName\": \"chicken pizza\",\n      \"dishPic\":\n        \"https://www.zilliondesigns.com/blog/wp-content/uploads/Dominos-Pizza-logo-2.jpg\",\n      \"price\": 5\n    }\n  ],\n  \"time\": \"9am to 9pm\",\n  \"pickup\": true,\n  \"delivery\": true,\n  \"isOpen\": true,\n  \"logoUrl\":\n    \"https://www.zilliondesigns.com/blog/wp-content/uploads/Dominos-Pizza-logo-2.jpg\",\n  \"rating\": 5,\n  \"ratingCount\": \"5\",\n  \"code\": \"1234\",\n  \"coords\": {\n    \"id\": \"123456\",\n    \"latitude\": \"1234\",\n    \"latitudeDelta\": \"1234\",\n    \"longitude\": \"1234\",\n    \"longitudeDelta\": \"1234\",\n    \"address\": \"mumbai india\"\n  }\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "get-all-restaurants",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:5000/api/v1/resturant/getAll",
+                            "path": [
+                                "api",
+                                "v1",
+                                "resturant",
+                                "getAll"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        }
+                    }
+                },
+                {
+                    "name": "get-restaurant",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:5000/api/v1/resturant/get/6790cd9b653c841ceb69f220",
+                            "path": [
+                                "api",
+                                "v1",
+                                "resturant",
+                                "get",
+                                "6790cd9b653c841ceb69f220"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        }
+                    }
+                },
+                {
+                    "name": "delete-restaurant",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "http://localhost:5000/api/v1/resturant/delete/6790cd9b653c841ceb69f220",
+                            "path": [
+                                "api",
+                                "v1",
+                                "resturant",
+                                "delete",
+                                "6790cd9b653c841ceb69f220"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTBjNmIzNjUzYzg0MWNlYjY5ZjIxZCIsImlhdCI6MTczNzU0MTMxNiwiZXhwIjoxNzM4MTQ2MTE2fQ.zmU3iTIgCf7PZWWUc9q1LQZMTWjkNGFFCaUZ06wnqxM"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "category",
+            "item": [
+                {
+                    "name": "create-category",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:5000/api/v1/category/create",
+                            "path": [
+                                "api",
+                                "v1",
+                                "category",
+                                "create"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTBjNmIzNjUzYzg0MWNlYjY5ZjIxZCIsImlhdCI6MTczNzU0MTMxNiwiZXhwIjoxNzM4MTQ2MTE2fQ.zmU3iTIgCf7PZWWUc9q1LQZMTWjkNGFFCaUZ06wnqxM"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"title\": \"Fast Food\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "get-all-category",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:5000/api/v1/category/getAll",
+                            "path": [
+                                "api",
+                                "v1",
+                                "category",
+                                "getAll"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        }
+                    }
+                },
+                {
+                    "name": "update-category",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "http://localhost:5000/api/v1/category/update/6790d46b653c841ceb69f229",
+                            "path": [
+                                "api",
+                                "v1",
+                                "category",
+                                "update",
+                                "6790d46b653c841ceb69f229"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTBjNmIzNjUzYzg0MWNlYjY5ZjIxZCIsImlhdCI6MTczNzU0MTMxNiwiZXhwIjoxNzM4MTQ2MTE2fQ.zmU3iTIgCf7PZWWUc9q1LQZMTWjkNGFFCaUZ06wnqxM"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"title\": \"Sweets\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "delete-category",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "http://localhost:5000/api/v1/category/delete/6790d46b653c841ceb69f229",
+                            "path": [
+                                "api",
+                                "v1",
+                                "category",
+                                "delete",
+                                "6790d46b653c841ceb69f229"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "5000"
+                        },
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTBjNmIzNjUzYzg0MWNlYjY5ZjIxZCIsImlhdCI6MTczNzU0MTMxNiwiZXhwIjoxNzM4MTQ2MTE2fQ.zmU3iTIgCf7PZWWUc9q1LQZMTWjkNGFFCaUZ06wnqxM"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}
